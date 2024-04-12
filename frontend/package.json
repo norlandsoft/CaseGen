@@ -1,0 +1,13 @@
+{
+  "name": "case-gen",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "PORT=9001 max dev"
+  },
+  "dependencies": {
+    "air-design": "git+http://github.com/norlandsoft/AirDesign.git"
+  },
+  "devDependencies": {
+    "@umijs/max": "^4.1.9"
+  }
+}
