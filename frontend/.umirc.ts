@@ -8,5 +8,10 @@ export default defineConfig({
       component: "@/layouts/BasicLayout"
     }
   ],
+  alias: {
+    "@": "./src",
+    "air-design": "./node_modules/air-design/aird"
+  },
+  base: "/",
   outputPath: "../static",
 });
