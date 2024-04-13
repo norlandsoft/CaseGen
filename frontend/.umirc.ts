@@ -1,4 +1,5 @@
 import {defineConfig} from "umi";
+const { resolve } = require('path');
 
 export default defineConfig({
   dva: {},
@@ -9,8 +10,7 @@ export default defineConfig({
     }
   ],
   alias: {
-    "@": "./src",
-    "air-design": "./node_modules/air-design/aird"
+    'aird': resolve(__dirname, 'node_modules/air-design/aird'),
   },
   base: "/",
   outputPath: "../static",

@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from 'umi';
 import {Tooltip} from "antd";
-import {Icons} from 'air-design';
+import {Icons} from 'aird';
 import styles from './MenuBar.less';
 
 const MenuBar: React.FC = (props: any) => {

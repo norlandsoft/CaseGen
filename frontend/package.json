@@ -5,9 +5,14 @@
     "start": "PORT=9001 max dev"
   },
   "dependencies": {
-    "air-design": "git+http://github.com/norlandsoft/AirDesign.git"
+    "air-design": "git+http://github.com/norlandsoft/AirDesign.git",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@umijs/max": "^4.1.9"
+    "@types/react": "^18.2.77",
+    "@types/react-dom": "^18.2.25",
+    "@umijs/max": "^4.1.9",
+    "typescript": "^5.4.5"
   }
 }
