@@ -10,7 +10,7 @@ export default defineConfig({
     }
   ],
   alias: {
-    'aird': resolve(__dirname, 'node_modules/air-design/aird'),
+    'aird': resolve(__dirname, 'node_modules/air-design/lib'),
   },
   base: "/",
   outputPath: "../static",

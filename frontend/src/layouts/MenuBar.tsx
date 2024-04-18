@@ -24,8 +24,8 @@ const MenuBar: React.FC = (props: any) => {
 
   const menuItems = [
     {
-      id: 'note',
-      title: '文案',
+      id: 'case',
+      title: '用例',
       icon: 'wiki',
       role: 'user'
     },
