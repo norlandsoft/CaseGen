@@ -8,3 +8,6 @@ yarn.lock
 
 .umi
 .umi-production
+
+# java
+target

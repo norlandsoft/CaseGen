@@ -1,0 +1,114 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.norlandsoft</groupId>
+  <artifactId>QABricks</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+    <maven.test.skip>true</maven.test.skip>
+
+    <!--maven plugins-->
+    <maven.antrun.plugin>3.1.0</maven.antrun.plugin>
+    <maven.jar.plugin>3.3.0</maven.jar.plugin>
+    <maven.clean.plugin>3.3.2</maven.clean.plugin>
+    <maven.dependency.plugin>3.6.1</maven.dependency.plugin>
+    <maven.assembly.plugin>3.6.0</maven.assembly.plugin>
+    <maven.compiler.plugin>3.11.0</maven.compiler.plugin>
+    <maven.resources.plugin>3.3.1</maven.resources.plugin>
+
+    <!--Spring 6-->
+    <springboot.version>3.2.4</springboot.version>
+    <spring.version>6.1.5</spring.version>
+
+    <!--数据库-->
+    <mybatis.version>3.5.15</mybatis.version>
+    <postgres.version>42.6.0</postgres.version>
+
+    <!--Log-->
+    <slf4j.version>2.0.11</slf4j.version>
+    <log4j.version>2.22.1</log4j.version>
+
+  </properties>
+
+  <modules>
+    <module>air-core</module>
+    <module>air-platform</module>
+  </modules>
+
+  <dependencies>
+    <!--日志-->
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-slf4j2-impl</artifactId>
+      <version>${log4j.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+
+    <!--Lombok - Dev辅助-->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.30</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <includes>
+          <include>**/*.*</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>src/main/java</directory>
+        <includes>
+          <include>**/*.xml</include>
+          <include>**/*.json</include>
+        </includes>
+      </resource>
+    </resources>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>${maven.clean.plugin}</version>
+        <configuration>
+          <filesets>
+            <fileset>
+              <directory>${project.basedir}</directory>
+              <useDefaultExcludes>true</useDefaultExcludes>
+              <includes>
+                <include>**/lib/</include>
+              </includes>
+              <excludes>
+                <exclude>**/documents/</exclude>
+                <exclude>**/frontend/</exclude>
+              </excludes>
+            </fileset>
+          </filesets>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
+</project>
