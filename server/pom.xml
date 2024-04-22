@@ -24,12 +24,13 @@
     <maven.resources.plugin>3.3.1</maven.resources.plugin>
 
     <!--Spring 6-->
-    <springboot.version>3.2.4</springboot.version>
-    <spring.version>6.1.5</spring.version>
+    <springboot.version>3.2.5</springboot.version>
+    <spring.version>6.1.6</spring.version>
 
     <!--数据库-->
     <mybatis.version>3.5.15</mybatis.version>
     <postgres.version>42.6.0</postgres.version>
+    <mysql.version>8.2.0</mysql.version>
 
     <!--Log-->
     <slf4j.version>2.0.11</slf4j.version>
